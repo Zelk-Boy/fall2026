@@ -1,1 +1,672 @@
 
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+:root {
+    --bg: #0c0d12;
+    --surface: #14161f;
+    --surface-light: #1c1f2b;
+    --border: #292c3a;
+
+    --text: #f3f1fa;
+    --muted: #9295a6;
+
+    --purple: #a78bfa;
+    --purple-dark: #7655d9;
+
+    --green: #76e0b2;
+    --orange: #ffb37b;
+
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 0%,
+            rgba(117, 82, 200, 0.13),
+            transparent 35rem
+        ),
+        #0c0d12;
+
+    color: var(--text);
+
+    font-family: 'Manrope', sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* =========================================
+   2. PAGE CONTAINER
+========================================= */
+
+.page-shell {
+    width: min(1080px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   3. HEADER
+========================================= */
+
+.topbar {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-dark)
+    );
+
+    color: #151020;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px rgba(139,92,246,0.25);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+#themeButton {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 18px;
+}
+
+#themeButton:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+}
+
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+
+.hero {
+    padding: 82px 0 66px;
+    max-width: 690px;
+}
+
+.eyebrow {
+    color: var(--purple);
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    margin: 24px 0 20px;
+
+    font-size: clamp(54px, 8vw, 88px);
+    line-height: 0.99;
+
+    letter-spacing: -6px;
+    font-weight: 800;
+}
+
+h1 span {
+    color: var(--purple);
+}
+
+.hero-copy {
+    max-width: 470px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   5. SECTION HEADINGS
+========================================= */
+
+.section-heading,
+.console-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.section-kicker {
+    color: var(--purple);
+
+    font-size: 10px;
+    letter-spacing: 1.4px;
+}
+
+h2 {
+    margin: 0;
+
+    font-size: 23px;
+    letter-spacing: -0.8px;
+}
+
+.live-label {
+    color: var(--green);
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   6. EXPERIMENT GRID
+========================================= */
+
+.experiment-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.panel {
+    background: linear-gradient(
+        145deg,
+        #191c27,
+        #12141d
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 17px;
+
+    box-shadow: var(--shadow);
+}
+
+.experiment-grid .panel {
+    padding: 23px;
+    min-height: 270px;
+}
+
+.panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-icon {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    background: rgba(167,139,250,0.12);
+    color: var(--purple);
+
+    font-size: 18px;
+}
+
+.panel-tag {
+    color: #74798c;
+
+    font-size: 9px;
+    letter-spacing: 1.3px;
+}
+
+h3 {
+    margin: 19px 0 6px;
+
+    font-size: 17px;
+    letter-spacing: -0.35px;
+}
+
+.muted {
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   7. BUTTONS
+========================================= */
+
+.button-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+button[type="button"],
+button[type="submit"] {
+    border: 0;
+}
+
+.button-row button,
+.input-row button {
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    background: var(--purple);
+    color: #171122;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.button-row button:hover,
+.input-row button:hover {
+    background: #bba6ff;
+    transform: translateY(-2px);
+}
+
+#resetButton {
+    background: #252836;
+    color: var(--muted);
+}
+
+#resetButton:hover {
+    background: #343747;
+    color: white;
+}
+
+
+/* =========================================
+   8. COUNTER
+========================================= */
+
+.counter-display {
+    margin: 17px 0 14px;
+
+    color: var(--purple);
+
+    font-size: 43px;
+    font-weight: 500;
+    letter-spacing: -3px;
+
+    font-family: 'DM Mono', monospace;
+}
+
+
+/* =========================================
+   9. GREETING FORM
+========================================= */
+
+#greetingForm {
+    margin-top: 18px;
+}
+
+#greetingForm label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #777d90;
+
+    font-size: 9px;
+    letter-spacing: 1.3px;
+}
+
+.input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.input-row input {
+    min-width: 0;
+    flex: 1;
+
+    padding: 10px 12px;
+
+    background: #0e1018;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 11px;
+}
+
+.input-row input:focus {
+    border-color: var(--purple);
+
+    box-shadow: 0 0 0 3px rgba(167,139,250,0.1);
+}
+
+#greetingOutput {
+    min-height: 17px;
+    margin-top: 13px;
+
+    color: var(--orange);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   10. COLOR CHANGER
+========================================= */
+
+.color-tile {
+    height: 63px;
+
+    margin: 17px 0 13px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #9b7cf5,
+        #5b42b5
+    );
+
+    color: white;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+
+    transition: background 0.3s ease;
+}
+
+
+/* =========================================
+   11. ACTIVITY LOG
+========================================= */
+
+.console-panel {
+    margin-top: 16px;
+    padding: 23px;
+}
+
+.console-header {
+    align-items: center;
+}
+
+.console-header h2 {
+    font-size: 18px;
+}
+
+#clearLogButton {
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+#clearLogButton:hover {
+    color: var(--purple);
+}
+
+.console-window {
+    min-height: 88px;
+    max-height: 180px;
+
+    overflow-y: auto;
+
+    padding: 13px 15px;
+
+    background: #0b0d13;
+
+    border: 1px solid #242735;
+    border-radius: 10px;
+
+    color: #c7c9d4;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    line-height: 2;
+}
+
+.log-entry {
+    display: flex;
+    gap: 12px;
+}
+
+.log-symbol {
+    color: var(--green);
+}
+
+.log-time {
+    color: #62687a;
+}
+
+.console-footer {
+    margin-top: 12px;
+
+    color: #6d7384;
+
+    font-size: 8px;
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================
+   12. CHALLENGE SECTION
+========================================= */
+
+.challenge {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin: 55px 0 50px;
+    padding: 25px 27px;
+
+    border: 1px solid rgba(167,139,250,0.2);
+    border-radius: 16px;
+
+    background: linear-gradient(
+        100deg,
+        rgba(119,85,211,0.12),
+        rgba(20,22,31,0.25)
+    );
+
+    overflow: hidden;
+}
+
+.challenge-number {
+    color: var(--purple);
+
+    font-family: 'DM Mono', monospace;
+    font-size: 27px;
+}
+
+.challenge h2 {
+    margin-bottom: 7px;
+    font-size: 19px;
+}
+
+.challenge-decoration {
+    margin-left: auto;
+
+    color: rgba(167,139,250,0.14);
+
+    font-family: 'DM Mono', monospace;
+    font-size: 65px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   13. FOOTER
+========================================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0 30px;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    color: #626779;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   14. LIGHT THEME
+========================================= */
+
+body.light-theme {
+    --bg: #f3f1f9;
+    --surface: #ffffff;
+    --border: #dedbea;
+    --text: #211d2c;
+    --muted: #6f6b7d;
+
+    background: #f3f1f9;
+    color: var(--text);
+}
+
+body.light-theme .panel {
+    background: #ffffff;
+}
+
+body.light-theme .input-row input {
+    background: #f7f6fb;
+    color: #211d2c;
+}
+
+body.light-theme .console-window {
+    background: #f7f6fb;
+    color: #211d2c;
+}
+
+body.light-theme .button-row #resetButton {
+    background: #ece9f5;
+    color: #625b75;
+}
+
+body.light-theme .topbar,
+body.light-theme .footer {
+    border-color: rgba(30,20,60,0.1);
+}
+
+
+/* =========================================
+   15. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page-shell {
+        width: calc(100% - 30px);
+    }
+
+    .topbar {
+        height: 68px;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .hero {
+        padding: 62px 0 48px;
+    }
+
+    h1 {
+        letter-spacing: -4px;
+    }
+
+    .experiment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experiment-grid .panel {
+        min-height: auto;
+    }
+
+    .challenge {
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .challenge-decoration {
+        display: none;
+    }
+
+    .footer {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+
